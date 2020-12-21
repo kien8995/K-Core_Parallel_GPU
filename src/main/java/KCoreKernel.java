@@ -17,7 +17,7 @@ public class KCoreKernel extends Kernel {
 	@Override
 	public void run() {
 		int index = getGlobalId();
-
+		
 		if (kCore[adjListV[index]] == 0) {
 			degrees[adjListV[index]] = degrees[adjListV[index]] - 1;
 			temp[index] = adjListV[index];

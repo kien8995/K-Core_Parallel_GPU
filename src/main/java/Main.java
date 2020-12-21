@@ -32,7 +32,7 @@ public class Main {
 	}
 
 	// path to input/output file
-	private static final String INPUT = "egov-final.txt";
+	private static final String INPUT = "SequenceAssociation.txt";
 	private static final String OUTPUT = "output.txt";
 
 	// list to store edges
@@ -60,12 +60,20 @@ public class Main {
 
 	// main function
 	public static void main(String[] args) throws Exception {
+		int mb = 1024 * 1024;
+		// Getting the runtime reference from system
+		Runtime runtime = Runtime.getRuntime();
+		System.out.println("##### Heap utilization statistics [MB] #####");
+
 		Main main = new Main();
 		main.init();
 		main.readFile();
 		main.loadData();
 		main.compute();
-		main.writeFile();
+		//main.writeFile();
+
+		// Print used memory
+		System.out.println("Used Memory:" + (runtime.totalMemory() - runtime.freeMemory()) / mb);
 	}
 
 	// initialize
